@@ -60,6 +60,7 @@ function register() {
 			userJSON = JSON.stringify(userJSON); 
 			localStorage.setItem('users', userJSON); 
 			$('p')[1].innerHTML = 'Congratulations!Registered successfully';
+			$('#remind').css('display', 'block');
 			//注册成功显示相应提示信息
 		}
 	} else {
@@ -67,6 +68,7 @@ function register() {
 		userJSON = JSON.stringify(userJSON);//转换为JSON格式 
 		localStorage.setItem('users', userJSON);//JSON格式字符串存入
 		$('p')[1].innerHTML = 'Congratulations!Registered successfully';
+		$('#remind').css('display', 'block');
 	}	
 };
 
@@ -231,6 +233,7 @@ function loggedOut() {
 		$('#back').css('display', 'none');
 		$('#go').css('display', 'none');
 		$('#result').css('display', 'none');
+		$('#go').val('continue');
 		for(var k = 0;k < allQuestions.length;k++) {
 			allQuestions[k].userAnswer = '';
 		}	
