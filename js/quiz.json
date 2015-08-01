@@ -1,0 +1,112 @@
+[
+	{
+  	"querstion": "1.What is JavaScript?",
+ 	 	"choices": [
+   	 "A. a Programming Language1",
+   	 "B. a Food",
+  	 "C. Dont Know"
+  	],
+  	"answer": "A",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+	{
+  	"querstion": "2.您认为黑客是？",
+  	"choices": [
+    	"A. 计算机技术很高的人",
+    	"B. 长的黑的人",
+    	"C. 姓黑名客的人"
+  	],
+  	"answer": "C",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+	{
+  	"querstion": "3.恐龙是如何灭绝的？",
+  	"choices": [
+    	"A. 都升仙了",
+    	"B. 死光了就灭绝",
+    	"C. Dont Know"
+  	],
+  	"answer": "B",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+  {
+    "querstion": "4.为什么好马不吃回头草？",
+    "choices": [
+      "A. 它开心",
+      "B. 因为后面的草吃光了",
+      "C. Dont Know"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "5.最简单的长寿秘诀是什么？",
+    "choices": [
+      "A. 开心就好",
+      "B. 吃仙桃",
+      "C. 不要停止呼吸"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "6.中国哪个地方的东西最不便宜？？",
+    "choices": [
+      "A. 贵州",
+      "B. 沈阳",
+      "C. 首都北京"
+    ],
+    "answer": "A",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "7.最可怕的病是？",
+    "choices": [
+      "A. 网瘾",
+      "B. 精神病",
+      "C. 就是觉得自己没病"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "8.和别人争执打起架来，你认为下面哪个道具最有用？",
+    "choices": [
+      "A. 砖头",
+      "B. 汽车",
+      "C. 棍子"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "9.治疗失眠最有效的方法是？",
+    "choices": [
+      "A. 催眠术",
+      "B. 安眠药",
+      "C. 直接打晕"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "10.下面哪种物体最具有无厘头形象？",
+    "choices": [
+      "A. 癞蛤蟆",
+      "B. 恐龙",
+      "C. 大便"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  }
+]

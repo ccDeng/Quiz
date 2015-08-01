@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dynamic Quiz</title>
+	<link rel="stylesheet" type="text/css" href="css/Quiz.css">
+</head>
+
+<body>
+	<h2>Dynamic Quiz</h2>
+	<!-- 以下quiz为整个显示框，内容，登陆窗口都嵌在里面 -->
+	<div id="quiz">
+		<!-- 以下为登陆窗口 -->
+		<form id="login">
+			<input type="text" id="user" value="" placeholder="username" /><br>
+			<input type="password" id="password" value="" placeholder="password" /><br>
+			<input type="checkbox" id="remember" checked="true" /><span>Remember the user for 10 days</span>
+			<input type="button" id="btnLogin" value="Login" />
+			<input type="button" id="btnRegister" value="Register" />		
+		</form>
+		<!-- 以下为内容题目板块 -->
+		<div id="content">
+			<p>Welcome to Dynamic Quiz</p>
+			<!-- 以下为最后的结果显示板块 -->
+			<div id="result">
+				<table>
+					<thead>
+						以下为答题结果，1表示正确，0表示错误不得分
+					</thead>
+					<tbody>
+					</tbody>						
+				</table>
+			</div>
+		</div>
+		<!-- 以下为返回继续按钮 -->
+		<input type="button" id="go" value="continue" />
+		<input type="button" id="back" value="back" />
+		<!-- 以下为提示信息板块 -->
+		<div id="remind">
+			<p></p>
+		</div>
+	</div>
+	<!-- 以下为退出按钮 -->
+	<form id="end">
+		<input type="button" id="loggedOut" value="END" />
+	</form>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/Quiz.js"></script>
+</body>
+</html>
