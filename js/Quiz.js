@@ -12,7 +12,7 @@ function successHandler() {
 function failureHandler() {
 	console.error('error');
 };
-client.open('GET', 'js/Quiz.json', true);
+client.open('GET', 'js/quiz.json', true);
 client.send(null);
 //以上为获取JSON文件解析为JS数组对象
 
