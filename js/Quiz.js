@@ -203,7 +203,7 @@ function comeBack() {
 		//获取上一题信息显示
 		for(var k = 0;k < allQuestions[f].choices.length;k++) {
 			v = (k+10).toString(36).toUpperCase();
-			content += '<label for=' + v + '><input type="radio" name="select" value=' + v + ' id=' + v + '>' + allQuestions[0].choices[k] + '</label></br>';
+			content += '<label for=' + v + '><input type="radio" name="select" value=' + v + ' id=' + v + '>' + allQuestions[f].choices[k] + '</label></br>';
 		}
 		$('p')[0].innerHTML = allQuestions[f].querstion + '</br>' + content;
 		//显示上一题已选答案
