@@ -54,6 +54,7 @@ function register() {
 		}
 		if(repeat) {
 			$('p')[1].innerHTML = 'Registration failed, there is the same user name';
+			$('#remind').css('display', 'block');
 			//若账号重复提示相应信息
 		} else { 
 			userJSON.data.push(newUser); //将新用户push进去
@@ -130,7 +131,7 @@ function next() {
 		$('#result').css('display', 'none');
 		for(var k = 0;k < allQuestions[0].choices.length;k++) {
 			v = (k+10).toString(36).toUpperCase();
-			content += '<input type="radio" name="select" value=' + v + '>' + allQuestions[0].choices[k] + '</br>';
+			content += '<label for=' + v + '><input type="radio" name="select" value=' + v + ' id=' + v + '>' + allQuestions[0].choices[k] + '</label></br>';
 		}
 		$('p')[0].innerHTML = allQuestions[0].querstion + '</br>' + content; 
 		if(allQuestions[0].userAnswer != undefined && allQuestions[0].userAnswer != '') {
@@ -162,7 +163,7 @@ function next() {
 			$('#back').css('display', 'block'); 
 			for(var k = 0;k < allQuestions[i].choices.length;k++) {
 				v = (k+10).toString(36).toUpperCase();
-				content += '<input type="radio" name="select" value=' + v + '>' + allQuestions[i].choices[k] + '</br>';
+				content += '<label for=' + v + '><input type="radio" name="select" value=' + v + ' id=' + v + '>' + allQuestions[0].choices[k] + '</label></br>';
 			}
 			$('p')[0].innerHTML = allQuestions[i].querstion + '</br>' + content;
 			//来回修改时候，将已选的题目答案显示出来
@@ -202,7 +203,7 @@ function comeBack() {
 		//获取上一题信息显示
 		for(var k = 0;k < allQuestions[f].choices.length;k++) {
 			v = (k+10).toString(36).toUpperCase();
-			content += '<input type="radio" name="select" value=' + v + '>' + allQuestions[f].choices[k] + '</br>';
+			content += '<label for=' + v + '><input type="radio" name="select" value=' + v + ' id=' + v + '>' + allQuestions[0].choices[k] + '</label></br>';
 		}
 		$('p')[0].innerHTML = allQuestions[f].querstion + '</br>' + content;
 		//显示上一题已选答案
