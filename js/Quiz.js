@@ -163,7 +163,7 @@ function next() {
 			$('#back').css('display', 'block'); 
 			for(var k = 0;k < allQuestions[i].choices.length;k++) {
 				v = (k+10).toString(36).toUpperCase();
-				content += '<label for=' + v + '><input type="radio" name="select" value=' + v + ' id=' + v + '>' + allQuestions[0].choices[k] + '</label></br>';
+				content += '<label for=' + v + '><input type="radio" name="select" value=' + v + ' id=' + v + '>' + allQuestions[i].choices[k] + '</label></br>';
 			}
 			$('p')[0].innerHTML = allQuestions[i].querstion + '</br>' + content;
 			//来回修改时候，将已选的题目答案显示出来
