@@ -39,6 +39,7 @@ function register() {
 	//输入为空验证
 	if(userName == '' || password == '') {
 			$('p')[1].innerHTML = 'The user name and password cannot be empty';
+			$('#remind').css('display', 'block');			
 			return;
 	}
 	//账号重复验证
