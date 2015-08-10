@@ -144,7 +144,7 @@ function next() {
 		$('#tab').css('display', 'none');	
 		$('#content').css('display', 'block');
 		$('p')[0].innerHTML = 'The question is just your chosen topic, let us go to the answer!';
-	}else if(i == 'T') {
+	}else if(i == 'T') {i
 		//进入答题,显示第一题内容
 		for(var k = 0;k < allQuestions[0].choices.length;k++) {
 			v = (k+10).toString(36).toUpperCase();
