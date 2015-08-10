@@ -250,6 +250,7 @@ function loggedOut() {
 			$('#password').val(getcookie('password'));//自动输入密码用户	
 		}
 		//登陆界面出现，内容以及continue和back按钮隐藏，问题初始化
+		$('#tab').css('display', 'none');
 		$('#login').css('display', 'block');
 		$('#content').css('display', 'none');
 		$('#back').css('display', 'none');
