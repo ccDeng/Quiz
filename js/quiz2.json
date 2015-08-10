@@ -1,0 +1,112 @@
+[
+	{
+  	"querstion": "1.人体含水量百分比最高的器官是？",
+ 	 	"choices": [
+   	 "A. 肝",
+   	 "B. 肾脏",
+  	 "C. 眼球"
+  	],
+  	"answer": "C",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+	{
+  	"querstion": "2.下半旗是把旗子下降到距离顶端多少处？",
+  	"choices": [
+    	"A. 1/3",
+    	"B. 2/3",
+    	"C. 1/2"
+  	],
+  	"answer": "A",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+	{
+  	"querstion": "3.飞机票头等舱的票价一般为普通舱票价的多少？",
+  	"choices": [
+    	"A. 200%",
+    	"B. 150%",
+    	"C. 120%"
+  	],
+  	"answer": "B",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+  {
+    "querstion": "4.中国铁路车票一般分为几种？",
+    "choices": [
+      "A. 1种",
+      "B. 2种",
+      "C. 3种"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "5.竹子是那种类别？",
+    "choices": [
+      "A. 树",
+      "B. 草",
+      "C. 花"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "6.按照风俗习惯戒指带在中指上表示？",
+    "choices": [
+      "A. 恋爱中",
+      "B. 订婚",
+      "C. 已结婚"
+    ],
+    "answer": "A",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "7.相传我国古代能作“掌上舞”的人是？",
+    "choices": [
+      "A. 赵飞燕",
+      "B. 杨玉环",
+      "C. 西施"
+    ],
+    "answer": "A",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "8.骨折时伴随休克发生，应先治？",
+    "choices": [
+      "A. 骨折",
+      "B. 休克",
+      "C. 无太大关系"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "9.废弃塑料袋在自然界中自行降解至少需要多少年？",
+    "choices": [
+      "A. 100",
+      "B. 200",
+      "C. 300"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "10.足球比赛中对于如果连续获得几张黄牌将被罚令出场？",
+    "choices": [
+      "A. 3",
+      "B. 2",
+      "C. 1"
+    ],
+    "answer": "A",
+    "userAnswer": "",
+    "correctAnswer": 0
+  }
+]

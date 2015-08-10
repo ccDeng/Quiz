@@ -1,0 +1,112 @@
+[
+	{
+  	"querstion": "1.室内装饰材料选用应根据什么原则？",
+ 	 	"choices": [
+   	 "A. 屋主喜好",
+   	 "B. 无毒环保",
+  	 "C. 美观大方"
+  	],
+  	"answer": "B",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+	{
+  	"querstion": "2.常晒被褥的目的是？",
+  	"choices": [
+    	"A. 用太阳光中的紫外线杀灭被褥中的细菌和微生物",
+    	"B. 蒸发潮湿",
+    	"C. 两者兼具"
+  	],
+  	"answer": "C",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+	{
+  	"querstion": "3.下列哪项可以预防胃癌？",
+  	"choices": [
+    	"A. 多吃蔬菜水果",
+    	"B. 多吃肉类食品",
+    	"C. 多吃营养补品"
+  	],
+  	"answer": "A",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+  {
+    "querstion": "4.预防脑中风应做到？",
+    "choices": [
+      "A. 多走少坐",
+      "B. 生活规矩，睡眠充足",
+      "C. 天天运动"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "5.保持居室通风透气，主要是为了预防？",
+    "choices": [
+      "A. 呼吸道传染病",
+      "B. 消化道传染病",
+      "C. 鼠疫"
+    ],
+    "answer": "A",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "6.容易引起儿童少年嗅觉减退的疾病是？",
+    "choices": [
+      "A. 扁桃体炎",
+      "B. 感冒",
+      "C. 气管炎"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "7.补充维生素C能预防什么病？",
+    "choices": [
+      "A. 坏血病",
+      "B. 骨质疏松",
+      "C. 感冒"
+    ],
+    "answer": "A",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "8.当您身边有人不小心摔断腿时，应如何处理？",
+    "choices": [
+      "A. 不要动患者，叫医生急救",
+      "B. 搀扶患者去医院救治",
+      "C. 固定患肢，叫医生急救"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "9.每天摄入食盐过多容易导致什么疾病？",
+    "choices": [
+      "A. 肾炎",
+      "B. 高血压",
+      "C. 糖尿病"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "10.急性腹痛的病人在去医院之前，最好做法是？",
+    "choices": [
+      "A. 吃一点止痛药",
+      "B. 多喝水",
+      "C. 忍一下，不要乱用药"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  }
+]

@@ -1,0 +1,112 @@
+[
+	{
+  	"querstion": "1.第一位女诗人是？",
+ 	 	"choices": [
+   	 "A. 蔡琰",
+   	 "B. 李清照",
+  	 "C. 谢道韫"
+  	],
+  	"answer": "A",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+	{
+  	"querstion": "2.'大珠小珠落玉盘'所形容的是什么乐器的弹奏声?",
+  	"choices": [
+    	"A. 古筝",
+    	"B. 琵琶",
+    	"C. 箜篌"
+  	],
+  	"answer": "B",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+	{
+  	"querstion": "3.在'精卫填海'的故事里,'精卫'是？",
+  	"choices": [
+    	"A. 一只鸟",
+    	"B. 一个人",
+    	"C. 一条鱼"
+  	],
+  	"answer": "A",
+  	"userAnswer": "",
+  	"correctAnswer": 0
+	},
+  {
+    "querstion": "4.'买椟还珠'这则成语是用来比喻有些人",
+    "choices": [
+      "A. 为了赚钱不择手段",
+      "B. 只注重事物外表，不重内涵",
+      "C. 善于掩盖事物本质"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "5.'红娘'是哪部作品中的人物？",
+    "choices": [
+      "A. 红楼梦",
+      "B. 牡丹亭",
+      "C. 西厢记"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "6.李清照的《如梦令》里的'绿肥红瘦'是描写什么季节的景象？",
+    "choices": [
+      "A. 盛夏",
+      "B. 初秋",
+      "C. 晚春"
+    ],
+    "answer": "C",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "7.'司空见惯'中的'司空'是指",
+    "choices": [
+      "A. 唐代一位诗人",
+      "B. 官职",
+      "C. 一位高僧"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "8.什么时候适合用'七月流火'来形容？",
+    "choices": [
+      "A. 夏去秋来",
+      "B. 炎炎夏日",
+      "C. 春去夏来"
+    ],
+    "answer": "A",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "9.'成也萧何，败也萧何'说的是谁的经历？",
+    "choices": [
+      "A. 项羽",
+      "B. 韩信",
+      "C. 张良"
+    ],
+    "answer": "B",
+    "userAnswer": "",
+    "correctAnswer": 0
+  },
+  {
+    "querstion": "10.民间故事《梁祝》突出反映了我国现行《婚姻法》的哪项基本制度？",
+    "choices": [
+      "A. 婚姻自由",
+      "B. 一夫一妻",
+      "C. 男女平等"
+    ],
+    "answer": "A",
+    "userAnswer": "",
+    "correctAnswer": 0
+  }
+]

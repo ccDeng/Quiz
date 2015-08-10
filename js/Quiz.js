@@ -1,19 +1,21 @@
-var client = new XMLHttpRequest();
-client.onload = function() {
-	if(client.status >= 200 && client.status <= 304) {
-		successHandler();
-	} else {
-		failureHandler();
-	}
-};
-function successHandler() {
-	allQuestions = JSON.parse(client.responseText);//全局变量
-};
-function failureHandler() {
-	console.error('error');
-};
-client.open('GET', 'js/quiz.json', true);
-client.send(null);
+function getJson(JsonName) {
+	var client = new XMLHttpRequest();
+	client.onload = function() {
+		if(client.status >= 200 && client.status <= 304) {
+			successHandler();
+		} else {
+			failureHandler();
+		}
+	};
+	function successHandler() {
+		allQuestions = JSON.parse(client.responseText);//全局变量
+	};
+	function failureHandler() {
+		console.error('error');
+	};
+	client.open('GET', JsonName, true);
+	client.send(null);
+}
 //以上为获取JSON文件解析为JS数组对象
 
 $(document).ready(function() {
@@ -38,8 +40,8 @@ function register() {
 	var userJSON = {data:[]};//data键名，值为对象数组
 	//输入为空验证
 	if(userName == '' || password == '') {
-			$('p')[1].innerHTML = 'The user name and password cannot be empty';
-			$('#remind').css('display', 'block');			
+			$('p')[5].innerHTML = 'The user name and password cannot be empty';
+			$('#remind').css('display', 'block');
 			return;
 	}
 	//账号重复验证
@@ -54,14 +56,14 @@ function register() {
 			}
 		}
 		if(repeat) {
-			$('p')[1].innerHTML = 'Registration failed, there is the same user name';
+			$('p')[5].innerHTML = 'Registration failed, there is the same user name';
 			$('#remind').css('display', 'block');
 			//若账号重复提示相应信息
 		} else { 
 			userJSON.data.push(newUser); //将新用户push进去
 			userJSON = JSON.stringify(userJSON); 
 			localStorage.setItem('users', userJSON); 
-			$('p')[1].innerHTML = 'Congratulations!Registered successfully';
+			$('p')[5].innerHTML = 'Congratulations!Registered successfully';
 			$('#remind').css('display', 'block');
 			//注册成功显示相应提示信息
 		}
@@ -69,7 +71,7 @@ function register() {
 		userJSON.data.push(newUser);
 		userJSON = JSON.stringify(userJSON);//转换为JSON格式 
 		localStorage.setItem('users', userJSON);//JSON格式字符串存入
-		$('p')[1].innerHTML = 'Congratulations!Registered successfully';
+		$('p')[5].innerHTML = 'Congratulations!Registered successfully';
 		$('#remind').css('display', 'block');
 	}	
 };
@@ -102,11 +104,11 @@ function login() {
 		$('#remind').css('display', 'none');
 		$('#login').css('display', 'none');
 		$('p')[0].innerHTML = 'Welcome to Dynamic Quiz,' + nowUser;
-		$('p')[1].innerHTML = 'Please input your answer!';
+		$('p')[5].innerHTML = 'Please input your answer!';
 		$('#user').val('');
 		$('#password').val(''); //username跟password清空
 	} else {
-		$('p')[1].innerHTML = 'Failed,please check the username and password';
+		$('p')[5].innerHTML = 'Failed,please check the username and password';
 		$('#remind').css('display', 'block');//提示相应错误
 	}	
 };
@@ -126,10 +128,24 @@ function next() {
 			allQuestions[k].userAnswer = '';
 		}			
 	}
-	//判断进入答题还是已经显示题目
-	if(i == 'W') {
+	$('#result').css('display', 'none');
+	//判断进入答题还是已经显示题目还是选择题目
+	if(i == 'W' && $('#content').css('display') == 'none') {
+		//选择题库
+		if ($('#One').hasClass('active')) {
+      getJson('js/quiz.json');
+		} else if($('#Two').hasClass('active')) {
+			getJson('js/quiz2.json');
+		} else if($('#Three').hasClass('active')) {
+			getJson('js/quiz3.json');
+		} else {
+			getJson('js/quiz4.json');
+		}
+		$('#tab').css('display', 'none');	
+		$('#content').css('display', 'block');
+		$('p')[0].innerHTML = 'The question is just your chosen topic, let us go to the answer!';
+	}else if(i == 'T') {
 		//进入答题,显示第一题内容
-		$('#result').css('display', 'none');
 		for(var k = 0;k < allQuestions[0].choices.length;k++) {
 			v = (k+10).toString(36).toUpperCase();
 			content += '<label for=' + v + '><input type="radio" name="select" value=' + v + ' id=' + v + '>' + allQuestions[0].choices[k] + '</label></br>';
@@ -137,8 +153,12 @@ function next() {
 		$('p')[0].innerHTML = allQuestions[0].querstion + '</br>' + content; 
 		if(allQuestions[0].userAnswer != undefined && allQuestions[0].userAnswer != '') {
 			$('input[name="select"][value="' + allQuestions[0].userAnswer + '"]').attr('checked','checked');
-		}
+		}		
+	}	else if (i == 'W') {
+		$('#tab').css('display', 'block');	
+		$('#content').css('display', 'none');
 	} else {
+		//答题中，显示下一题
 		//计算本题得分，记录当前答案
 		allQuestions[j].userAnswer = $('input[name="select"]:checked').val();
 		if(allQuestions[j].userAnswer == undefined) {

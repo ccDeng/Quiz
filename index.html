@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dynamic Quiz</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/Quiz.css">
 </head>
 
@@ -32,6 +33,30 @@
 				</table>
 			</div>
 		</div>
+		<!-- 以下为利用tab组件选择题目的版块 -->
+		<div id="tab">
+			<ul id="myTab" class="nav nav-tabs">
+   			<li class="active" id="One"><a href="#aQuiz" data-toggle="tab">
+      quiz1</a></li>
+   			<li id="Two"><a href="#bQuiz" data-toggle="tab">quiz2</a></li>
+   			<li id="Three"><a href="#cQuiz" data-toggle="tab">quiz3</a></li>
+   			<li id="Four"><a href="#dQuiz" data-toggle="tab">quiz4</a></li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+   			<div class="tab-pane fade in active" id="aQuiz">
+      		<p>These are some brain teasers topics.</p>
+   			</div>
+   			<div class="tab-pane fade" id="bQuiz">
+      		<p>This is some topics about life common sense.</p>
+   			</div>
+   			<div class="tab-pane fade" id="cQuiz">
+      		<p>This is about the language knowledge of the subject.</p>
+   			</div>
+   			<div class="tab-pane fade" id="dQuiz">
+      		<p>These are some of the questions have little knowledge about health.</p>
+   			</div>
+			</div>
+		</div>
 		<!-- 以下为返回继续按钮 -->
 		<input type="button" id="go" value="continue" />
 		<input type="button" id="back" value="back" />
@@ -45,6 +70,7 @@
 		<input type="button" id="loggedOut" value="END" />
 	</form>
 	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/Quiz.js"></script>
 </body>
 </html>

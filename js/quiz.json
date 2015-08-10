@@ -2,7 +2,7 @@
 	{
   	"querstion": "1.What is JavaScript?",
  	 	"choices": [
-   	 "A. a Programming Language1",
+   	 "A. a Programming Language",
    	 "B. a Food",
   	 "C. Dont Know"
   	],
@@ -55,7 +55,7 @@
     "correctAnswer": 0
   },
   {
-    "querstion": "6.中国哪个地方的东西最不便宜？？",
+    "querstion": "6.中国哪个地方的东西最不便宜？",
     "choices": [
       "A. 贵州",
       "B. 沈阳",
