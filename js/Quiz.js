@@ -28,6 +28,8 @@ $(document).ready(function() {
 	$('#go').on('click', next);
 	$('#back').on('click', comeBack);
 	$('#loggedOut').on('click', loggedOut);
+	$('#check').on('click',total);
+	$('#cover').on('click',exit);
 });
 
 //以下为定义函数
@@ -36,7 +38,7 @@ $(document).ready(function() {
 function register() {
 	var userName = $('#user').val();
 	var password = $('#password').val();
-	var newUser = { user: userName, pass: password };
+	var newUser = { user: userName, pass: password, grade: [0, 0, 0, 0, 0, 0]};
 	var userJSON = {data:[]};//data键名，值为对象数组
 	//输入为空验证
 	if(userName == '' || password == '') {
@@ -82,13 +84,15 @@ function login() {
 	var password = $('#password').val(); 
 	var userJSON = localStorage.getItem('users');
 	userJSON = JSON.parse(userJSON); //获取当前登陆用户信息以及所有用户信息
-	var pass, nowUser;
+	var pass, nowUser, lastGrade;
 	if(!userJSON) {
 		pass = false; 
 	} else {
 		for (var i = 0; i < userJSON.data.length; i++) {
 			if(userJSON.data[i].user == userName && userJSON.data[i].pass == password) {
 				//登陆成功后，记录当前用户
+				nowUserNumber = i; //全局变量记录当前用户在数组里面方便修改成绩数据，在result使用
+				lastGrade = userJSON.data[nowUserNumber].grade;
 				setcookie('username', userName, getDate(10), '/');
 				setcookie('password', password, getDate(10), '/');
 				nowUser = getcookie('username');
@@ -98,12 +102,13 @@ function login() {
 		}
 	}
 	if(pass) {
+		var userGrade = '</br>There are your grades:' + '</br>the quiz1: ' + lastGrade[0] + '</br>the quiz2: ' + lastGrade[1] + '</br>the quiz3: ' + lastGrade[2] + '</br>the quiz4: '+ lastGrade[3] + '</br>the sumGrade: '+ lastGrade[4] + '</br>your total score ranking: ' + lastGrade[5]; //需要显示上次成绩
 		//登陆通过后，显示内容以及continue按钮，登陆板块消失，将错误板块换成相应信息并隐藏
 		$('#content').css('display', 'block');
 		$('#go').css('display', 'block');
 		$('#remind').css('display', 'none');
 		$('#login').css('display', 'none');
-		$('p')[0].innerHTML = 'Welcome to Dynamic Quiz,' + nowUser;
+		$('p')[0].innerHTML = 'Welcome to Dynamic Quiz,' + nowUser + userGrade; //显示用户上次成绩
 		$('p')[5].innerHTML = 'Please input your answer!';
 		$('#user').val('');
 		$('#password').val(''); //username跟password清空
@@ -121,9 +126,10 @@ function next() {
 	}
 	var j = i - 1;
 	var content = '';
-	var v;
+	var v, sumGrade = 0;
 	if ($('#go').val() == 'try again') { //若是重新再做则全部初始化前一轮答案
 		$('#go').val('continue');
+		$('#check').css('display', 'none');
 		for(var k = 0;k < allQuestions.length;k++) {
 			allQuestions[k].userAnswer = '';
 		}			
@@ -133,12 +139,16 @@ function next() {
 	if(i == 'W' && $('#content').css('display') == 'none') {
 		//选择题库
 		if ($('#One').hasClass('active')) {
+      selectQuiz = '0';
       getJson('js/quiz.json');
 		} else if($('#Two').hasClass('active')) {
+			selectQuiz = '1';
 			getJson('js/quiz2.json');
 		} else if($('#Three').hasClass('active')) {
+			selectQuiz = '2';
 			getJson('js/quiz3.json');
 		} else {
+			selectQuiz = '3';
 			getJson('js/quiz4.json');
 		}
 		$('#tab').css('display', 'none');	
@@ -176,6 +186,17 @@ function next() {
 			for(var k = 0;k < allQuestions.length;k++) {
 				result += allQuestions[k].correctAnswer;
 			}
+			var userJSON = localStorage.getItem('users');
+			userJSON = JSON.parse(userJSON); //获取当前登陆用户信息以及所有用户信息
+			userJSON.data[nowUserNumber].grade[selectQuiz] = result;
+			for(var q = 3;q >= 0;q--) {
+				sumGrade += userJSON.data[nowUserNumber].grade[q];
+			}
+			userJSON.data[nowUserNumber].grade[4] = sumGrade;
+			userJSON = sort(userJSON);
+			userJSON = JSON.stringify(userJSON); 
+			localStorage.setItem('users', userJSON);
+			//将当前得分存入用户数据
 			$('p')[0].innerHTML = 'Congratulations!Your final score is: ' + result;
 			$('#go').css('display', 'none');	//continue按钮消失
 			go.onclick = null;
@@ -219,6 +240,7 @@ function comeBack() {
 		$('#go').css('display', 'block');
 		$('#back').css('display', 'none'); //back按钮消失，continue按钮出现
 		$('#go').val('try again'); //将continue改为try again 点击重新做题
+		$('#check').css('display', 'block');
 	} else {
 		allQuestions[j].userAnswer = $('input[name="select"]:checked').val(); //若非结果页面，记录当前的已选答案
 		//获取上一题信息显示
@@ -256,6 +278,7 @@ function loggedOut() {
 		$('#back').css('display', 'none');
 		$('#go').css('display', 'none');
 		$('#result').css('display', 'none');
+		$('#check').css('display', 'none');
 		$('#go').val('continue');
 		for(var k = 0;k < allQuestions.length;k++) {
 			allQuestions[k].userAnswer = '';
@@ -299,3 +322,45 @@ function getDate(n) {
   var newTime = time + n*24*60*60*1000;
   return new Date(newTime);
 };
+
+//以下为查看总分排行榜的方法
+function total() {
+	var userJSON = localStorage.getItem('users');
+	userJSON = JSON.parse(userJSON); 
+	var content = '';
+	var end = 10;
+	if(userJSON.data.length < 10) {
+		end = userJSON.data.length;
+	}
+	for(var i = 0;i < end;i++) {
+		content += userJSON.data[i].grade[5] + ' ' + userJSON.data[i].user + ' </br>';
+	}	
+	console.log(content);
+	$('p')[6].innerHTML = content;
+	$('#cover').css('display','block');
+	$('#total').css('display','block');
+}
+//以下为退出排行榜的方法
+function exit() {
+	$('#cover').css('display','none');
+	$('#total').css('display','none');	
+}
+//以下为更新排名的方法
+function sort(userJSON) {
+	var k = 0, t;
+	for(var i = 0, end = userJSON.data.length;i < end;i++) {
+		k = i;
+		for(var j = i;j > end;j++) {
+			if(userJSON.data[j] > userJSON.data[k]) {
+				k = j;
+			}
+		}
+		t = userJSON.data[i];
+		userJSON.data[i] = userJSON.data[k];
+		userJSON.data[k] = userJSON.data[i]; 
+	}
+	for(i = 0;i < end;i++) {
+		userJSON.data[i].grade[5] = i + 1;
+	}
+	return userJSON;
+}
