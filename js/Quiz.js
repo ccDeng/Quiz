@@ -335,7 +335,6 @@ function total() {
 	for(var i = 0;i < end;i++) {
 		content += userJSON.data[i].grade[5] + ' ' + userJSON.data[i].user + ' </br>';
 	}	
-	console.log(content);
 	$('p')[6].innerHTML = content;
 	$('#cover').css('display','block');
 	$('#total').css('display','block');
